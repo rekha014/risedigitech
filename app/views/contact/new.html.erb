@@ -1,0 +1,61 @@
+<div id="breadcrumb">
+        <div class="container"> 
+            <div class="breadcrumb">                            
+                <li><a href="<%= root_path %>">Home</a></li>
+                <li>Contact</li>            
+            </div>      
+        </div>  
+    </div>
+       
+    <section id="contact-page">
+        <div class="container">
+            <div class="center"  style="margin-top: 30px;"">        
+                <h2>Drop Your Message</h2>
+                <p>If you have any further questions, please don’t hesitate to contact us.</p>
+            </div> 
+            <div class="row contact-wrap"> 
+                <div class="status alert alert-success" style="display: none"></div>
+                <div class="col-md-6 col-md-offset-3">
+                    <div id="sendmessage">Your message has been sent. Thank you!</div>
+                    <div id="errormessage"></div>
+                          <%= form_for @message, :class=>"contactForm", url: contact_path do |message_form| %>
+
+                            <div class="form-group">
+
+                            <%= message_form.text_field :name, :class=> "form-control", placeholder: "Your Name" %>
+                                  
+                                    <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                    <%= message_form.text_field :subject, :class=>"form-control", placeholder: "Mobile Number"%>
+                                    <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                    <%= message_form.email_field :email, :class=>"form-control", placeholder: "Enter email"%>
+                                    <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                     <%= message_form.text_area :message, :class=> "form-control", :rows => "7", :cols => "40", placeholder: "Message"%>
+                                    <div class="validation"></div>
+                            </div>
+                        <div class="text-center"><%= message_form.submit "Send", :class=> "btn btn-primary " %></div>
+                    <% end %> 
+
+
+                </div>
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#contact-page-->
+    
+      <div class="map" id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7358.966872661452!2d75.88979511348457!3d22.747433668881207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1srisedigitech+princess+business+skypark+indore!5e0!3m2!1sen!2sin!4v1500287875521" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+              
+
+
+    
+
+
+
+
+       
